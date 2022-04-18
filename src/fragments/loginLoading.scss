@@ -1,0 +1,11 @@
+.loadingCustom {
+  svg {
+    background: url(../assets/icons/loading.png) !important;
+    background-size: contain !important;
+    transform: rotateY(180deg);
+    circle {
+      stroke: unset;
+    }
+  }
+}
+

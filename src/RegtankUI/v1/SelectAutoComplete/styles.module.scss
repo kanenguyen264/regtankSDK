@@ -1,0 +1,184 @@
+@import "../styles/global.scss";
+
+.TextField {
+  label {
+    font-weight: 500;
+    font-size: toRem(12);
+    line-height: toRem(16);
+    color: $default;
+    transform: translate(0, 1.5px) scale(1);
+    letter-spacing: toRem(0.2);
+  }
+  :global(.MuiInput-underline) {
+    &:before {
+      border-bottom: 1px solid $grayLight;
+    }
+    &:after {
+      border-bottom: 2px solid $primary;
+    }
+    &:global(.Mui-error):after {
+      border-color: $errorBorder;
+    }
+    &:hover {
+      &:before {
+        border-bottom: 2px solid $default;
+      }
+    }
+    :global(.MuiAutocomplete-popupIndicator) {
+      color: $defaultLight;
+    }
+  }
+  :global(.MuiAutocomplete-endAdornment) {
+    :global(.MuiAutocomplete-popupIndicatorOpen) {
+      color: $primary;
+    }
+  }
+  :global(.Mui-error) {
+    :global(.MuiAutocomplete-endAdornment) {
+      :global(.MuiAutocomplete-popupIndicatorOpen) {
+        color: $errorBorder;
+      }
+    }
+    :global(.MuiAutocomplete-popupIndicator) {
+      color: $errorBorder;
+    }
+    :global(.MuiInputBase-input) {
+      -webkit-text-fill-color: $mainBlackText;
+      &::placeholder {
+        color: $mainBlackText;
+        opacity: 1;
+      }
+    }
+  }
+  :global(.MuiInputBase-input) {
+    padding: toRem(8) 0 toRem(6);
+    font-size: toRem(14);
+    color: $mainBlackText;
+    &::placeholder {
+      font-weight: 400;
+      font-size: toRem(14);
+      line-height: toRem(20);
+      color: $defaultLight;
+      letter-spacing: toRem(0.1);
+      opacity: 1;
+    }
+  }
+  :global(.Mui-focused) label {
+    color: $primary;
+  }
+
+  :global(.Mui-error),
+  .errorMsg {
+    color: $errorBorder;
+  }
+
+  :global(.MuiFormHelperText-root) {
+    font-weight: 500;
+    font-size: toRem(12);
+    line-height: toRem(16);
+    margin-top: 4px;
+  }
+}
+
+.paper {
+  box-shadow: $boxShadow !important;
+  border-radius: toRem(8) !important;
+  margin: toRem(8) 0;
+  background-color: $white;
+  margin-top: toRem(8);
+  width: 100%;
+
+  :global([class*="vCustomScrollBarTrack"]) {
+    right: 8px;
+    width: 6px !important;
+    > div {
+      background: $grayBorder;
+    }
+  }
+
+  :global(.MuiAutocomplete-listbox) {
+    overflow: unset;
+
+    li {
+      cursor: pointer;
+      font-weight: 500;
+      font-size: toRem(12);
+      line-height: toRem(16);
+      letter-spacing: toRem(0.12);
+      color: $defaultDark;
+      padding: toRem(12) toRem(16) !important;
+
+      :global(.MuiOutlinedInput-root) {
+        height: toRem(48);
+      }
+
+      :global(.MuiAvatar-root) {
+        margin-right: toRem(12);
+        position: relative;
+        overflow: visible;
+        &:before {
+          content: "";
+          display: block;
+          width: 100%;
+          height: 100%;
+          box-sizing: content-box;
+          position: absolute;
+          padding: 1px;
+          transform-origin: 0 0;
+          border-radius: 50%;
+          box-shadow: 0 0 0 1px $primary;
+          transition: opacity 0.3s ease-in-out;
+          opacity: 0;
+        }
+      }
+
+      &:hover {
+        background-color: $itemHover;
+        :global(.reg-MuiUserAvatar-description) {
+          color: $primary;
+        }
+        :global(.MuiAvatar-root::before) {
+          opacity: 1;
+        }
+        :global(.MuiAvatar-root:before) {
+          opacity: 1;
+        }
+      }
+      &:global(.Mui-focused) {
+        background-color: $itemHover !important;
+        color: $primary;
+      }
+    }
+  }
+}
+.disableSearch {
+  :global(.MuiInputBase-input) {
+    -webkit-text-fill-color: $defaultLight;
+  }
+  :global(.MuiInputLabel-root) {
+    &:global(.Mui-disabled) {
+      color: $default;
+      &:global(.Mui-error) {
+        color: $errorBorder;
+      }
+    }
+  }
+}
+.selectNoLabel {
+  :global(.MuiInputBase-root) {
+    border-radius: 6px;
+    :global(.MuiOutlinedInput-notchedOutline) {
+      top: 0;
+      legend {
+        display: none;
+      }
+    }
+  }
+}
+:global(.MuiOutlinedInput-root) {
+  &:hover {
+    :global(.MuiOutlinedInput-notchedOutline) {
+      border-color: $default;
+    }
+  }
+}

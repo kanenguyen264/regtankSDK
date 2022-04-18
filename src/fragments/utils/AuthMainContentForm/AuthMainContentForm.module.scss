@@ -1,0 +1,36 @@
+@import "~@protego/sdk/RegtankUI/v1/styles/global.scss";
+
+.appLoginWrapper {
+  img.Logo {
+    height: 2.7rem;
+    margin-bottom: 2rem;
+  }
+  .version {
+    color: $grayText;
+    text-align: center;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+  }
+  .versionCenter {
+    background-color: $white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+.AuthMainContent {
+  composes: app-login-main-content from global;
+  margin: 20px;
+  &:global(.app-login-main-content) {
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: unset;
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}

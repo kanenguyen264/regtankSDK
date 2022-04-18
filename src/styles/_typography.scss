@@ -1,0 +1,17 @@
+@import "./global/mixin";
+
+:root {
+  font-size: 17px;
+  @media screen and (min-device-width: 1260px) {
+    font-size: 11.33333px;
+  }
+  @include screen-1366p {
+    font-size: 12.5px;
+  }
+  @media screen and (min-device-width: 1580px) {
+    font-size: 14.2px;
+  }
+  @media screen and (min-device-width: 1900px) {
+    font-size: 17px;
+  }
+}

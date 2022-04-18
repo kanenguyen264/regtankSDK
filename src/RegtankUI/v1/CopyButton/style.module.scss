@@ -1,0 +1,12 @@
+@import "../styles/global.scss";
+
+.CopyIconHover:hover {
+  svg path {
+    fill: $primary !important ;
+  }
+}
+
+.boxCopyButton {
+  display: flex;
+  align-items: flex-start;
+}

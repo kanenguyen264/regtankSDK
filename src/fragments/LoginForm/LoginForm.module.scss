@@ -1,0 +1,92 @@
+@import "~@protego/sdk/RegtankUI/v1/styles/global.scss";
+.LoginMainContentFormWrapper {
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: unset;
+  width: toRem(640);
+  height: toRem(642);
+  left: calc(50% - #{toRem(640/2)});
+  margin-top: calc(25% - #{toRem(642/2)});
+  :global(.app-login-main-content) {
+    padding-left: toRem(80);
+    padding-right: toRem(80);
+    padding-top: toRem(80);
+    padding-bottom: toRem(40);
+    width: toRem(640);
+    background: $white;
+    box-shadow: 0px 0px 8px rgba(37, 40, 43, 0.12);
+    border-radius: 8px;
+    form {
+      width: 100%;
+    }
+    .rememberWrapper {
+      width: 100%;
+      margin-bottom: toRem(20);
+      margin-top: toRem(-9);
+      margin-left: 0;
+      .forgotPassword {
+        a {
+          float: right;
+          font-weight: 500;
+          font-size: rem(14px);
+        }
+      }
+    }
+    .rememberMe {
+      margin-left: toRem(2);
+      :global(.MuiTypography-root) {
+        position: relative;
+        left: toRem(-10);
+        font-weight: 500;
+        font-size: toRem(14);
+        color: $grayText;
+      }
+    }
+    :global(.inputPassword) {
+      :global(.MuiButtonBase-root) {
+        top: 65%;
+      }
+    }
+  }
+}
+
+img.Logo {
+  height: 2.7rem;
+  margin-bottom: 2.3rem;
+}
+.Field {
+  margin-bottom: toRem(40);
+  fieldset {
+    width: 100%;
+  }
+}
+.Error {
+  position: absolute;
+  top: 0;
+  transform: translateY(calc(-100% - #{rem(25px)}));
+  left: -1rem;
+  right: -1rem;
+  h4 {
+    color: $white;
+    margin-bottom: 0.6741rem;
+  }
+  :global(.MuiAlert-root) {
+    padding: 1.58824rem;
+    margin-bottom: 1.47rem;
+  }
+  :global(.MuiAlert-message) {
+    padding: 0;
+  }
+  a {
+    color: inherit;
+    text-decoration: underline;
+  }
+}
+.Forgot {
+  font-size: rem(14px);
+}
+
+.loginLoadingWrapper {
+
+}

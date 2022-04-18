@@ -1,0 +1,55 @@
+---
+id: jrcard
+title: JR Card
+sidebar_label: JR Card
+---
+
+import JRCard from "../../../src/UI/JRCard/JRCard";
+import ProtegoCP from "@protegoTheme/ProtegoCP";
+import Grid from "@material-ui/core/Grid";
+
+## Import
+
+```javascript
+import JRCard from "@protego/sdk/UI/JRCard";
+```
+
+## Các kiểu kích thước
+
+<ProtegoCP>
+  <Grid container spacing={2}>
+    <Grid item xs={6}>
+      <JRCard>Bình thường</JRCard>
+    </Grid>
+    <Grid item xs={6}>
+      <JRCard header={"Bình thường"}>nhưng có header</JRCard>
+    </Grid>
+    <Grid item xs={6}>
+      <JRCard dense>thu nhỏ</JRCard>
+    </Grid>
+    <Grid item xs={6}>
+      <JRCard header={"Thu nhỏ"} dense>
+        nhưng có header
+      </JRCard>
+    </Grid>
+  </Grid>
+</ProtegoCP>
+
+```jsx
+<Grid container spacing={2}>
+  <Grid item xs={6}>
+    <JRCard>Bình thường</JRCard>
+  </Grid>
+  <Grid item xs={6}>
+    <JRCard header={"Bình thường"}>nhưng có header</JRCard>
+  </Grid>
+  <Grid item xs={6}>
+    <JRCard dense>thu nhỏ</JRCard>
+  </Grid>
+  <Grid item xs={6}>
+    <JRCard header={"Thu nhỏ"} dense>
+      nhưng có header
+    </JRCard>
+  </Grid>
+</Grid>
+```

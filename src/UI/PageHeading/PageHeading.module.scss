@@ -1,0 +1,57 @@
+@import "../../styles/global/_global-dir";
+
+.PageHeading {
+  composes: d-sm-flex justify-content-sm-between align-items-sm-center from global;
+  //background-color: #434f5a;
+  h2 {
+    flex: 0 0 auto;
+    font-size: rem(18px);
+    font-weight: 500;
+    //color: #e0e0e0;
+    display: inline-block;
+    margin-bottom: rem(5px);
+    margin-top: rem(2px);
+    line-height: 1.33333;
+  }
+
+  :global(.breadcrumb-item + .breadcrumb-item::before) {
+    font-size: rem(16px);
+  }
+
+  :global(.breadcrumb) {
+    padding: 0 !important;
+    background-color: transparent !important;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  :global(.breadcrumb-item) {
+    //color: $light-gray;
+    font-size: rem(13px);
+    @include screen-1366p {
+      font-size: rem(14px);
+    }
+    display: flex;
+    align-items: center;
+    //color: #808080;
+    line-height: 1.3846;
+    //&.active,
+    //&:hover {
+    //  color: rgba(#e0e0e0, 87%);
+    //}
+    &,
+    &:hover {
+      text-decoration: none;
+    }
+
+    :global(.MuiLink-root) {
+      color: inherit;
+
+      &,
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,75 @@
+---
+id: with-pagination
+title: withPagination
+sidebar_label: withPagination
+---
+
+> _Currently under development at **ClientPortal**_
+
+`withPagination` là một HOCs cung cấp hai prop `paginationParams` và `setPaginationParams()`, cho phép ánh xạ hai chiều các tham số paginating/sorting/searching có trên URL với component (theo đúng specs của Spring, xem thêm tại [đây](https://www.baeldung.com/rest-api-pagination-in-spring))
+
+## TS signature
+
+```typescript
+interface PaginationParams {
+  page: number;
+  size: number;
+  sort: string;
+}
+export interface WithPaginationInjectedProps {
+  paginationParams: PaginationParams;
+  setPaginationParams: (
+    newParams: Partial<PaginationParams>,
+    historyMethod?: "push" | "replace" | "pushIn" | "replaceIn",
+  ) => void;
+}
+
+export default function withPagination<P>(
+  Component: React.ComponentType<P & WithPaginationInjectedProps>,
+): React.ComponentType<P>;
+```
+
+## Example
+
+```javascript
+import React from "react";
+import { compose } from "recompose";
+import { useSelector, useDispatch } from "react-redux";
+import CountryFlag from "./CountryFlag";
+// import withPagination from somewhere... didn't implemented here
+// import CustomTable from somewhere... didn't implemented here
+// import KytAction from somewhere...
+
+const ExampleComponent = compose(withPagination)(function ExampleComponent(
+  props,
+) {
+  const { paginationParams, setPaginationParams } = props,
+    kytList = useSelector((state) => state.kyt),
+    dispatch = useDispatch();
+
+  // Execute effect bất cứ khi nào URL query params thay đổi
+  React.useEffect(() => {
+    dispatch(
+      KytAction({
+        params: paginationParams,
+      }),
+    );
+  }, [paginationParams]);
+
+  /**
+   * Data passed to CustomTable must shaped {records, total_pages, total_records}
+   */
+  return (
+    <CustomTable
+      columnData={{
+        id: { label: "KYT ID" },
+        geo: {
+          label: "GEO",
+          renderCell: (value) => <CountryFlag countryCode={value} svg />,
+        },
+      }}
+      data={kytList}
+    />
+  );
+});
+```

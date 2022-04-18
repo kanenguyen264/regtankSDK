@@ -1,0 +1,30 @@
+@import "../../styles/global/_global-dir";
+
+.Content {
+  /* width */
+  > div {
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    &::-webkit-scrollbar {
+      width: rem(6px);
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+      //box-shadow: inset 0 0 5px grey;
+      //border-radius: 10px;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      background: #333a43;
+      border-radius: rem(3px);
+    }
+
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+      background: #46505b;
+    }
+  }
+}

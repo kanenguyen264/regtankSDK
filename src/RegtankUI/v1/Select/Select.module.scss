@@ -1,0 +1,78 @@
+@import "../styles/global.scss";
+.selectWrapper {
+  width: 100%;
+  :global(.MuiFormHelperText-root){
+    color: $error;
+    font-size: toRem(12);
+    font-weight: 500 !important;
+  }
+  :global(.MuiOutlinedInput-root){
+    padding-left: toRem(8) !important;
+    :global(.MuiSelect-select){
+      font-size: toRem(14);
+    }
+  }
+  .container {
+    width: 100%;
+    :global(.MuiSelect-select) {
+      &:hover {
+        background-color: #f5fafe !important;
+        border-color: #f5fafe;
+      }
+    }
+    :global(.MuiSelect-icon) {
+      top: 33%
+    }
+  }
+  fieldset {
+    top: rem(-5px);
+    border-color: #f4f4f6;
+    legend {
+      display: none;
+    }
+  }
+  .helperTextStyle {
+    position: absolute;
+    top: calc(100%);
+    left: 0;
+    width: 100%;
+    margin-left: 0 !important;
+    margin-top: 0 !important;
+  }
+  .labelSelect {
+    font-size: toRem(12);
+    color: $default;
+    margin-bottom: toRem(10);
+    font-weight: 500;
+  }
+  .blueText {
+    color: $primary;
+  }
+}
+
+.customPaperMenuSelect {
+  box-shadow: 0px 0px 8px rgba(37, 40, 43, 0.12);
+  border-radius: 8px;
+  margin-top: 8px;
+  :global(.MuiList-root) {
+    padding: toRem(8) 0 !important;
+  }
+
+  :global(.MuiMenuItem-root) {
+    padding: toRem(12) toRem(16);
+    font-weight: 500;
+    font-size: toRem(12);
+    line-height: toRem(16);
+    color: $defaultDark;
+    border-radius: 0;
+    &:hover {
+      background-color: rgba(0, 128, 255, 0.04);
+      color: $primary;
+    }
+
+    &:global(.Mui-selected) {
+      color: $primary;
+      background-color: transparent;
+    }
+  }
+}

@@ -1,0 +1,63 @@
+---
+id: select
+title: Select
+sidebar_label: Select
+---
+
+import Select from "@protego/sdk/UI/Select";
+import ProtegoCP from "@protegoTheme/ProtegoCP";
+import MenuItem from "@material-ui/core/MenuItem";
+import APITable from "../../../website/src/mdxTheme/APITable";
+
+## Import
+
+```javascript
+import Select from "@protego/sdk/UI/Select";
+```
+
+## Select
+
+import ExampleNormal from "./select-normal-example";
+
+<ProtegoCP>
+  <ExampleNormal />
+</ProtegoCP>
+
+```jsx
+import React from "react";
+import Select from "@protego/sdk/UI/Select";
+import MenuItem from "@material-ui/core/MenuItem";
+import FormControl from "@material-ui/core/FormControl";
+
+const ExampleNormal = function () {
+  const [value, setValue] = React.useState(0);
+  return (
+    <FormControl style={{ width: "200px" }}>
+      <Select value={value} onChange={(e) => setValue(e.target.value)}>
+        <MenuItem value={0}>Foo</MenuItem>
+        <MenuItem value={1}>Bar</MenuItem>
+      </Select>
+    </FormControl>
+  );
+};
+
+<ExampleNormal />;
+```
+
+### Sử dụng với placeholder
+
+Bản thân `@material-ui/core/Select` vốn không thể hỗ trợ placeholder một cách tự động. Do đó nếu có nhu cầu thiết lập placeholder, sử dụng **trick** như code bên dưới đây:
+
+> Đặt placeholder như là first child của `<Select />` và set inline style là `{ display: "none" }`
+
+import * as ExamplePlaceholder from "./select-placeholder-example";
+
+<ProtegoCP example={ExamplePlaceholder} />
+
+## API
+
+Component thừa kế toàn bộ thuộc tính có sẵn của `@material-ui/core/Select`, xem thêm tại [https://material-ui.com/api/select/](https://material-ui.com/api/select/)
+
+Ngoài ra một số thuộc tính mở rộng bao gồm
+
+<APITable component={Select} />

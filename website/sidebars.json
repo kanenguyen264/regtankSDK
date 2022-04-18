@@ -1,0 +1,40 @@
+{
+  "docs": [
+    "index",
+    "coding-styles",
+    {
+      "Components": [
+        {
+          "type": "category",
+          "label": "@material-ui",
+          "items": [
+            "components/material-ui/button",
+            "components/material-ui/datepicker",
+            "components/material-ui/dialog",
+            "components/material-ui/textfield",
+            "components/material-ui/select",
+            "components/material-ui/table"
+          ]
+        },
+        {
+          "type": "category",
+          "label": "Component nội bộ",
+          "items": [
+            "components/app/countryflag",
+            "components/app/country-selector",
+            "components/app/dropdown",
+            "components/app/jrcard",
+            "components/app/loadingwrapper",
+            "components/app/page-heading",
+            "components/app/prompt-dialog"
+          ]
+        },
+        {
+          "type": "category",
+          "label": "HOCs",
+          "items": ["components/hocs/with-pagination"]
+        }
+      ]
+    }
+  ]
+}

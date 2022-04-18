@@ -1,0 +1,7 @@
+@function rem($size) {
+  @return ($size / 17px) * 1rem;
+}
+
+@function toRem($size) {
+  @return ($size / 16) * 1rem;
+}

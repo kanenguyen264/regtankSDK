@@ -1,0 +1,110 @@
+---
+id: page-heading
+title: Page Heading
+sidebar_label: Page Heading
+---
+
+import PageHeading from "../../../src/UI/PageHeading";
+import ProtegoCP from "@protegoTheme/ProtegoCP";
+import Button from "@material-ui/core/Button";
+import * as PageHeadingCustomUrlResolverExample from "./page-heading-custom-url-resolver";
+
+## Import
+
+```javascript
+import PageHeading from "@protego/sdk/UI/PageHeading";
+```
+
+## Page Heading
+
+### Breadcrumb
+
+Các đường link trên breadcrumb được mapping theo đúng đường dẫn thực tế trên browser, ví dụ `/app/staff/profile` sẽ cho ra Breadcrumb là `Home > Staff > Profile`.
+
+Về vấn đề dịch thuật, breadcrumb của `<PageHeading/>` quy định key intl cho từng segment của đường dẫn là `url.{segment}` (Trừ segment đầu tiên luôn là `Home`). Nếu chưa có bản dịch cho segment (ví dụ, `path`), breadcrumb sẽ chỉ hiển thị nguyên vẹn tên key được thiết lập là `url.path`
+
+### Mặc định
+
+Ở trạng thái mặc định, breadcrumb được đặt ở vị trí phía dưới tên page.
+
+<ProtegoCP>
+  <PageHeading title={"Example Page Heading"} />
+</ProtegoCP>
+
+```jsx
+<PageHeading title={"Example Page Heading"} />
+```
+
+### Breadcrumb nằm ngang
+
+<ProtegoCP>
+  <PageHeading title={"Example Page Heading"} inlineBreadcrumb />
+</ProtegoCP>
+
+```jsx
+<PageHeading title={"Example Page Heading"} inlineBreadcrumb />
+```
+
+### Breadcrumb với Button
+
+<ProtegoCP>
+  <PageHeading
+    title={"Example Page Heading"}
+    titleButton={
+      <Button variant={"contained"} color={"primary"}>
+        Button
+      </Button>
+    }
+  />
+</ProtegoCP>
+
+```jsx
+<PageHeading
+  title={"Example Page Heading"}
+  titleButton={
+    <Button variant={"contained"} color={"primary"}>
+      Button
+    </Button>
+  }
+/>
+```
+
+### Custom URL resolver
+
+Trường hợp URL có yếu tố dynamic, thiết lập `customUrlResolver` như ví dụ dưới đây.
+
+> `customUrlResolver` nhận giá trị là một hàm callback với hai tham số, tham số đầu tiên `i` là thứ tự của URL segment, từ `/app` được đánh số là 0; và tham số thứ 2 `sub` là giá trị thực của segment đó trên url.
+
+> Callback được gọi liên tục ứng với mỗi URL segment tham chiếu đến phần tử breadcrumb. Nếu lần gọi có giá trị trả về, giá trị đó được dùng để hiển thị thành label trên `PageHeading`. Nếu không trả về, mặc định dùng cơ chế dịch thuật `intl` như đã giải thích ở trên.
+
+Giải thích ví dụ phía dưới
+
+- segment `/ex` có index là 0 và có bản dịch intl
+- segment `/a` và `/b` có index là 1 nhưng không có bản dịch, ta thêm `customUrlResolver` và trả về Foo hoặc Bar khi `i===1`
+
+<ProtegoCP example={PageHeadingCustomUrlResolverExample} withBrowser />
+
+#### Update 04-01-2021
+
+##### `customUrlResolver` callback chấp nhận ba tham số
+
+1. `index: number`: thứ tự của URL segment bắt đầu từ 0 _(như cũ)_
+2. `subPath: string`: giá trị thực của URL segment hiện tại hiển thị trên trình duyệt _(như cũ)_
+3. `isLast: boolean`: là `true` nếu là URL segment cuối cùng _**(mới)**_
+
+##### Quy cách trả về mới
+
+1. _(như cũ)_ trả về `null` nếu muốn hiển thị breadcrumb theo mặc định
+2. _(như cũ)_ trả về `string|ReactElement` nếu muốn thay đổi tên hiển thị của segment trên breadcrumb
+3. _**(mới)**_ trả về một array `[render: string|ReactElement|null, to: string]` trong đó
+
+- `render` tương tự ý (1) và (2), trả về `null` nếu render mặc định theo intl và `string|ReactElement` nếu render tuỳ chỉnh
+- `to` cho phép tuỳ biến URL của segment này
+
+4. _**(mới)**_ trả về một array `[render:React.ReactNode, to:string, disableLink:boolean]` trong đó bổ sung thêm
+
+- `disableLink` tắt link effect (không click, không đổi màu, không navigate)
+
+Ví dụ: `/app/kyt/my-kyt` thì `customUrlResolver` khi xử lý segment `my-kyt` sẽ gọi callback với ba tham số là `2, "my-kyt", true`
+
+Tham khảo `/src/app/KYCSceeningPage/KYCMatchDetail/KYCMatchDetail.js` **(CP)**

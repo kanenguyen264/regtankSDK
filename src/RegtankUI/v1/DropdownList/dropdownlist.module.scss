@@ -1,0 +1,131 @@
+@import "../styles/global.scss";
+
+.textFieldOutlined {
+  top: 0;
+  width: 100%;
+  :global(.MuiFormLabel-root) {
+    display: block;
+    font-weight: 500;
+    font-size: toRem(12);
+    line-height: toRem(16);
+    color: $default;
+    top: 0;
+  }
+
+  :global(.MuiOutlinedInput-notchedOutline),
+  :global(.MuiOutlinedInput-root) {
+    top: 0;
+    height: toRem(48);
+  }
+
+  :global(.MuiOutlinedInput-root) {
+    &:global(.Mui-focused) {
+      :global(.MuiOutlinedInput-notchedOutline) {
+        border-color: $primary !important;
+      }
+
+      :global(.MuiSvgIcon-root path) {
+        fill: $primary;
+      }
+      :global(.MuiTypography-root) {
+        color: $primary !important;
+      }
+    }
+  }
+  :global(.MuiOutlinedInput-notchedOutline) {
+    border: 1px solid $grayBorder;
+  }
+  :global(.MuiSelect-select) {
+    margin-bottom: 0;
+    padding-left: toRem(16) !important;
+    padding-right: 0 !important;
+    position: relative;
+
+    :global(.MuiTypography-root) {
+      color: $bodyText;
+      font-size: toRem(14);
+      line-height: toRem(20);
+      color: $bodyText;
+    }
+
+    ~ :global(.MuiSvgIcon-root) {
+      position: absolute;
+      pointer-events: none;
+      right: toRem(22);
+      width: 10px;
+      path {
+        fill: $defaultLight;
+      }
+    }
+  }
+
+  :global(.helperText) {
+    font-weight: 500;
+  }
+  &.focus {
+    :global(.MuiFormLabel-root) {
+      color: $primary;
+    }
+  }
+
+  &.error {
+    :global(.MuiFormLabel-root) {
+      color: $error;
+    }
+  }
+}
+
+.selectPopover {
+  :global(.MuiPaper-root) {
+    margin-top: 8px;
+    box-shadow: 0 0 8px rgba(37, 40, 43, 0.12);
+  }
+
+  :global(.MuiList-root) {
+    padding: 8px 0;
+  }
+
+  :global(.MuiMenuItem-root) {
+    padding: toRem(8) toRem(16);
+    font-weight: 500;
+    font-size: toRem(12);
+    line-height: toRem(16);
+    color: $grayText;
+    &:hover {
+      color: $primary;
+      background-color: rgba($primary, 0.04);
+      :global(.MuiAvatar-root:after) {
+        opacity: 1;
+      }
+    }
+
+    :global(.MuiAvatar-root) {
+      margin-right: toRem(12);
+      width: 32px;
+      height: 32px;
+      position: relative;
+      overflow: visible;
+      &:after {
+        content: "";
+        display: block;
+        width: 36px;
+        height: 36px;
+        border: 1px solid $primary;
+        border-radius: 100%;
+        z-index: 100;
+        left: 50%;
+        transform: translate(-50%);
+        position: absolute;
+        opacity: 0;
+      }
+    }
+  }
+  :global(.RegScrollbarVTrack) {
+    right: 8px;
+    width: 6px !important;
+
+    :global(.RegScrollbarVThumb) {
+      background-color: $grayBorder;
+    }
+  }
+}

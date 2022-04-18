@@ -1,0 +1,60 @@
+---
+id: index
+title: Protego SDK
+sidebar_label: Getting Started
+slug: /
+---
+
+## Quy trình development
+
+> Sử dụng mail công ty để tạo tài khoản github, và yêu cầu admin mời vào dự án của team trước khi thực hiện các bước dưới đây
+
+### SSH Key để đọc/ghi mã nguồn
+
+#### Mac OS/Linux
+
+> Nếu đã có file `~/.ssh/id_rsa`, chỉ cần copy nội dung file `~/.ssh/id_rsa.pub`, không cần chạy lệnh khởi tạo lại
+
+```shell script
+$ ssh-keygen
+Generating public/private rsa key pair.
+Enter file in which to save the key (/User/macbook/.ssh/id_rsa): // Enter để bỏ qua
+Enter passphrase (empty for no passphrase): // Enter để bỏ qua
+Enter same passphrase again: // Enter để bỏ qua
+Your identification has been saved in /User/macbook/.ssh/id_rsa.
+Your public key has been saved in /User/macbook/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:Up6KjbnEV4Hgfo75YM393QdQsK3Z0aTNBz0DoirrW+c
+The key's randomart image is:
++---[RSA 2048]----+
+|    .      ..oo..|
+|   . . .  . .o.X.|
+|    . . o.  ..+ B|
+|   .   o.o  .+ ..|
+|    ..o.S   o..  |
+|   . %o=      .  |
+|    @.B...     . |
+|   o.=. o. . .  .|
+|    .oo  E. . .. |
++----[SHA256]-----+
+
+$ cat ~/.ssh/id_rsa.pub | pbcopy
+```
+
+Đăng nhập vào [](https://github.com) và mở trang **Settings** > **SSH and GPG Keys**, nhấn **New SSH keys**. Paste toàn bộ public key đã được copy từ step trước vào mục **Key**, sau đó **Add SSH key**
+
+### Các bộ mã nguồn
+
+#### [CRM](https://github.com/Regtank-Technology-Pte-Ltd/ProtegoCRM)
+
+#### [CP](https://github.com/Regtank-Technology-Pte-Ltd/ProtegoClientPortal)
+
+#### [@protego/sdk](https://github.com/Regtank-Technology-Pte-Ltd/protego-fe-sdk)
+
+UI Kit/resource được sử dụng chung cho cả CP và CRM, nhằm tạo nên sự thống nhất chặt chẽ về UI/UX của cả hai dự án.
+
+### Lưu ý khi development
+
+- Nên clone cả 3 bộ mã nguồn trên, và **_đặt vào cùng một thư mục_**
+
+- Khi có nhu cầu thực hiện chỉnh sửa bên trong **@protego/sdk**, hãy **_thảo luận với FE team trước về sự cần thiết_**, sau đó chạy lệnh `npm run switch-sdk:local` ở cả hai bộ mã nguồn CP/CRM. Xem thêm [quy trình phát triển **@protego/sdk**](#)

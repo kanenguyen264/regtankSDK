@@ -1,0 +1,163 @@
+@import "../styles/global.scss";
+.autoInputField {
+  svg {
+    margin-left: 5px;
+    width: toRem(12);
+    path {
+      fill: $mainBlackText;
+    }
+  }
+  :global(.MuiAvatar-root) {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+.autoPopperWrap {
+  width: 240px;
+  z-index: 999;
+  box-shadow: 0 3px 6px rgba(35, 35, 35, 0.14);
+  border-radius: 6px;
+  margin-top: toRem(6) !important;
+  padding-bottom: 6px;
+  padding-top: 6px;
+  background-color: $white;
+  :global(.MuiInputBase-root){
+    display: none !important;
+  }
+  > div {
+    z-index: 1000;
+    background-color: $white;
+    border-radius: 6px;
+    padding: toRem(16) toRem(12) 0;
+    overflow: hidden;
+  }
+
+  .autoHeader {
+    display: flex;
+    flex-wrap: wrap;
+    :global(.MuiInputBase-root) {
+      margin-bottom: toRem(16);
+      width: 100%;
+      border: 1px solid #e6e6e6;
+      box-sizing: border-box;
+      border-radius: 5px;
+      height: toRem(40);
+      display: flex;
+      align-items: center;
+      padding-left: toRem(16);
+
+      &:hover {
+        border-color: $default;
+      }
+
+      &:global(.Mui-focused) {
+        border-color: transparent !important;
+        box-shadow: 0 0 0 1px $primary;
+      }
+    }
+
+    :global(.MuiInputBase-input) {
+      font-size: toRem(14);
+      &::placeholder {
+        font-size: toRem(14);
+        line-height: toRem(17);
+        font-weight: 400;
+        color: #a3a3a3;
+      }
+    }
+    :global(.MuiSvgIcon-root) {
+      width: toRem(17);
+    }
+
+    .autoCount {
+      font-weight: normal;
+      font-size: toRem(14);
+      line-height: toRem(17);
+      color: #7a7a7a;
+    }
+  }
+
+  .autoPopperList {
+    width: 240px !important;
+    margin-left: -11px;
+    margin-top: -6px;
+    overflow: visible !important;
+    :global(.MuiAutocomplete-listbox) {
+      padding-top: 0;
+    }
+    :global(.reg-MuiUserAvatar-description) {
+      span {
+        color: $grayText !important;
+        font-weight: 500;
+      }
+    }
+    :global(.avatarWrapper) {
+      position: relative;
+      margin-right: 10px;
+      width: 36px;
+      height: 36px;
+      padding: 1px 1px;
+      border-radius: 50%;
+      :global(.MuiAvatar-root) {
+        position: absolute;
+        width: 32px;
+        height: 32px;
+        left: 50%;
+        top: 50%;
+        margin: -16px 0px 0px -16px;
+      }
+    }
+    :global(.MuiAutocomplete-option) {
+      padding: 9px 16px;
+      &:global(.Mui-focused) {
+        background-color: rgba($primary, 0.04);
+        :global(.avatarWrapper) {
+          border: 1px solid $primary;
+        }
+        :global(.reg-MuiUserAvatar-description) {
+          span {
+            color: $primary !important;
+            font-weight: 500;
+          }
+        }
+      }
+    }
+
+    .activeAutoCompleteItem {
+      background-color: rgba($primary, 0.04);
+      :global(.avatarWrapper) {
+        border: 1px solid $primary;
+      }
+      :global(.reg-MuiUserAvatar-description) {
+        span {
+          color: $primary !important;
+          font-weight: 500;
+          font-size: toRem(12);
+        }
+      }
+    }
+
+    :global(.MuiAutocomplete-listbox) {
+      max-height: none;
+    }
+
+    .vCustomScrollBarTrack {
+      position: absolute;
+      width: 4px !important;
+      right: 6px;
+      bottom: 2px;
+      top: 2px;
+      border-radius: 3px;
+      z-index: 999;
+    }
+    .vCustomScrollBarThumb {
+      background: #ebebeb;
+      border-radius: 6px;
+    }
+    .scrollbarView {
+      margin-right: -40pxs !important;
+    }
+  }
+}
+

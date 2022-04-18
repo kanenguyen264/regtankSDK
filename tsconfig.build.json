@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "module": "esnext",
+    "target": "es5",
+    "lib": ["es6", "dom"],
+    "jsx": "preserve",
+    "moduleResolution": "node",
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "experimentalDecorators": true,
+    "baseUrl": "./",
+    "rootDir": "src",
+    "outDir": "build",
+    "allowSyntheticDefaultImports": true,
+    "noErrorTruncation": false,
+    // Otherwise we get react-native typings which conflict with dom.lib.
+    "types": ["node", "react", "@material-ui/core"],
+    "emitDeclarationOnly": true,
+    "declaration": true
+  },
+  "include": ["src/**/*.ts", "src/**/*.tsx"],
+  "exclude": ["**/*.d.ts"]
+}

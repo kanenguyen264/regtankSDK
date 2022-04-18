@@ -1,0 +1,73 @@
+@import "~@protego/sdk/RegtankUI/v1/styles/global.scss";
+
+.RequestMainContent {
+  composes: app-login-main-content from global;
+  flex-direction: column !important;
+  align-items: center;
+  padding-left: toRem(80);
+  padding-right: toRem(80);
+  padding-top: toRem(40);
+  padding-bottom: toRem(28);
+  width: toRem(640);
+  position: relative;
+  left: calc(50% - #{toRem(640/2)});
+  margin-top: toRem(40);
+  margin-bottom: toRem(40);
+  .titleForm {
+    margin-top: toRem(-9);
+    margin-bottom: toRem(32);
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    :global(.badge) {
+      span:nth-child(2){
+        line-height: toRem(25);
+      }
+    }
+  }
+  position: relative;
+  overflow: unset;
+  small {
+    margin-top: 0.5295rem;
+    font-size: 0.8235rem;
+    line-height: 1.829;
+  }
+  .distanceField {
+    height: toRem(40);
+  }
+  .buttonGroup {
+    display: flex;
+    .button {
+      :global(.MuiButton-root){
+        width: toRem(228);
+        height: toRem(48);
+      }
+    }
+    .submitButton {
+      margin-left: toRem(24);
+    }
+  }
+  :global(.MuiInputBase-multiline) {
+    height: toRem(96);
+    textarea {
+      padding: 0;
+      height: 100% !important;
+      ::placeholder {
+        font-style: italic !important;
+      }
+    }
+    fieldset {
+      padding: toRem(12) toRem(12) !important;
+    }
+  }
+  :global(.MuiMenuItem-root.Mui-selected) {
+    color: $primary;
+    background-color: white;
+  }
+}
+img.Logo {
+  height: 2.7rem;
+  margin-bottom: 2.3rem;
+}

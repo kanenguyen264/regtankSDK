@@ -1,0 +1,7 @@
+@import "../../styles/global.scss";
+.ResetButton {
+  :global(.MuiButton-containedWhite) {
+    font-weight: 600;
+    color: #606E7B;
+  }
+}

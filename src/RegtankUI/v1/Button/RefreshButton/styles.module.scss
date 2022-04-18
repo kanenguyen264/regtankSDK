@@ -1,0 +1,9 @@
+@import "../../styles/global.scss";
+
+.button {
+  height: toRem(40);
+  width: toRem(40);
+  background: #ffffff;
+  border: 1px solid #dbdde0;
+  border-radius: 8px;
+}

@@ -1,0 +1,10 @@
+.circleProgressWrapper {
+  :global(.MuiCircularProgress-svg) {
+    background: url(./loading.png);
+    background-size: contain;
+    transform: rotateY(180deg);
+    circle {
+      stroke: unset;
+    }
+  }
+}

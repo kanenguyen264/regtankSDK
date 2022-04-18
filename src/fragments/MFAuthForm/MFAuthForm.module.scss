@@ -1,0 +1,27 @@
+@import "../../styles/global/_global-dir";
+.MFA {
+  // composes: app-login-main-content from global;
+  flex-direction: column;
+  align-items: center;
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  position: relative;
+  overflow: unset;
+  small {
+    margin-top: 1.1765rem;
+    font-size: 0.8235rem;
+    line-height: 1.829;
+  }
+  :global(.Mui-error) {
+    top: calc(100% - #{rem(10px)});
+  }
+}
+img.Logo {
+  height: 2.7rem;
+  margin-bottom: 2.3rem;
+}
+svg.KeyLock {
+  margin: 0 auto;
+}

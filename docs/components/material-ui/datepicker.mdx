@@ -1,0 +1,29 @@
+---
+id: datepicker
+title: DatePicker
+sidebar_label: DatePicker
+---
+
+import ProtegoCP from "../../../website/src/mdxTheme/ProtegoCP";
+
+## Import
+
+```javascript
+import DatePicker from "@protego/sdk/UI/DatePicker";
+```
+
+## Simple
+
+> Khi sử dụng cùng với placeholder, _Chỉ cần set initial value cho `<DatePicker/>` là `null`_
+
+import * as DatePickerSimpleExample from "./datepicker-simple";
+
+<ProtegoCP example={DatePickerSimpleExample} />
+
+## With Formik
+
+> `<DatePicker/>` được thừa kế mọi feature của `Formik` y hệt như `<TextField />`
+
+import * as DatePickerFormikExample from "./datepicker-formik";
+
+<ProtegoCP example={DatePickerFormikExample} />{" "}

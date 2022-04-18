@@ -1,0 +1,23 @@
+@import "~@protego/sdk/RegtankUI/v1/styles/global.scss";
+.selectOtherWrapper {
+  height: rem(27px);
+  width: rem(160px);
+  :global(.MuiInputBase-root){
+    height: rem(27px);
+  }
+  .InputrWrapper {
+    :global(.MuiOutlinedInput-root) {
+      height: rem(27px);
+      padding-right: rem(2px);
+      padding-bottom: rem(3px);
+      input {
+        padding-left: toRem(8);
+        padding-bottom: toRem(20);
+      }
+      // svg{
+      //   width: rem(15px);
+      //   height: rem(7.41px);
+      // }
+    }
+  }
+}

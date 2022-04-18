@@ -1,0 +1,14 @@
+@import "../styles/global.scss";
+
+fieldset {
+  top: rem(-5px);
+  border-color: #f4f4f6;
+  legend {
+    display: none;
+  }
+}
+.HelperText {
+  position: absolute;
+}
+
+

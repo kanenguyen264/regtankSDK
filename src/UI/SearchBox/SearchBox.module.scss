@@ -1,0 +1,9 @@
+.SearchBox {
+  background-color: transparent;
+  position: relative;
+  :global(.form-group) {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 0;
+  }
+}

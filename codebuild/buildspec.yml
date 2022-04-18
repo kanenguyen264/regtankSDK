@@ -1,0 +1,29 @@
+version: 0.2
+env:
+  git-credential-helper: yes
+phases:
+  install:
+    on-failure: ABORT
+    runtime-versions:
+      nodejs: 12
+    commands:
+      - git checkout develop
+      - git config user.email "build@regtank.io"
+      - git config user.name "CodeBuild"
+      - yarn install
+  build:
+    on-failure: ABORT
+    commands:
+      - set -e
+      - yarn bump:patch
+      - yarn build && git push --set-upstream origin develop
+      - cp -R build /tmp/build
+  post_build:
+    on-failure: ABORT
+    commands:
+      - git checkout master
+      - rm -rf ./*
+      - cp -TR /tmp/build `pwd`
+      - git add .
+      - git commit -m "Update SDK build"
+      - git push -f --set-upstream origin master

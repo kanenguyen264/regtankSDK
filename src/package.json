@@ -1,0 +1,15 @@
+{
+  "name": "@protego/sdk",
+  "version": "1.3.12-0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./babel/test/runner.js"
+  },
+  "bin": {
+    "protego": "bin/cli.js"
+  },
+  "dependencies": {
+    "react-idle-timer": "^4.6.2"
+  }
+}

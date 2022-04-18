@@ -1,0 +1,7 @@
+.CheckButtonWrapper {
+  :global(.Mui-disabled) {
+    path:nth-child(2) {
+      stroke: #5F5F5F;
+    }
+  }
+}

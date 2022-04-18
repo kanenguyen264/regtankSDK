@@ -1,0 +1,43 @@
+@import "../../styles/global/_global-dir";
+
+.JRCardRoot {
+  @extend %jr-card-style;
+  position: relative;
+
+  border-radius: rem(7px);
+  padding: rem(18px) rem(30px) {
+    bottom: rem(30px);
+  }
+  .JRCardHeader {
+    display: block;
+    margin-bottom: rem(17px);
+    + hr {
+      margin: {
+        left: rem(-30px);
+        right: rem(-30px);
+      }
+    }
+  }
+  &.JRCardDense {
+    padding: rem(13px) rem(20px) {
+      top: rem(17px);
+    }
+    .JRCardHeader + hr {
+      margin: {
+        left: rem(-20px);
+        right: rem(-20px);
+      }
+    }
+  }
+  &.NoShadow {
+    box-shadow: none;
+  }
+}
+.FullBody {
+  margin: rem(-18px) rem(-30px) {
+    bottom: rem(-30px);
+  }
+  .JRCardDense & {
+    margin: rem(-13px) rem(-20px);
+  }
+}

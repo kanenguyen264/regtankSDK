@@ -1,0 +1,41 @@
+---
+id: textfield
+title: Text Field
+sidebar_label: Text Field
+---
+
+import * as TextFieldFormikExample from "./textfield-formik";
+import * as TextFieldInputTel from "./textfield-inputtel";
+import ProtegoCP from "../../../website/src/mdxTheme/ProtegoCP";
+
+## Import
+
+```javascript
+import TextField from "@protego/sdk/UI/TextField";
+```
+
+> **Note** : **Không** import trực tiếp TextField từ `@material-ui` vì bản thân component đã được viết lại để tương thích với thiết kế của dự án Protego.
+
+### Sử dụng với Formik
+
+<ProtegoCP example={TextFieldFormikExample} />
+
+### Nhập liệu với PhoneNumber
+
+> Theo yêu cầu của Desmond, thiết lập `type="tel"` sẽ ngăn chặn người dùng nhập dữ liệu dạng số điện thoại trái format
+
+<ProtegoCP example={TextFieldInputTel} />
+
+### Auto-focus
+
+import * as TextFieldAutoFocusExample from "./textfield-autofocus";
+
+<ProtegoCP example={TextFieldAutoFocusExample} withBrowser />
+
+### Ẩn/hiện password
+
+Thiết lập prop `togglePassword` để hiện icon cho phép ẩn/hiện mật khẩu tự động
+
+import * as TextFieldPasswordExample from "./textfield-password";
+
+<ProtegoCP example={TextFieldPasswordExample} />

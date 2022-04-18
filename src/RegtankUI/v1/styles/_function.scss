@@ -1,0 +1,9 @@
+@import "variables";
+
+@function toRem($size) {
+  @return ($size / $base_fs) * 1rem;
+}
+
+@function rem($size) {
+  @return ($size / $base_fs_px) * 1rem;
+}

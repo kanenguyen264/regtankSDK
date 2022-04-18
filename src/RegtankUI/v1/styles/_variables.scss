@@ -1,0 +1,129 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+$base_fs: 16;
+$base_fs_px: 16px;
+$jr-card-padding: 30px !default;
+$jr-card-shadow: 0 2px 5px 0 rgba($black, 0.26) !default;
+$jr-card-margin: $card-columns-margin !default;
+$jr-card-title-form: rgba(35, 35, 35, 1);
+
+/* ColorPalate */
+$primary: #0080ff;
+$primaryLight: #0c88ff;
+$primaryExtraLight: #90c8ff;
+$primaryDark: #016bcf;
+$error: #ef5151;
+$errorBorder: #d44333;
+$errorLight: #ff6262;
+$errorDark: #e93c3c;
+$errorBg: #fbefee;
+$default: #95a1ac;
+$defaultLight: #abb4bd;
+$defaultDark: #606e7b;
+$warning: #febe2d;
+$warningLight: #ffbc1f;
+$warningDark: #e89806;
+$success: #21a453;
+$successLight: #21a453;
+$successDark: #21a453;
+$disabledBg: #f9f9fa;
+$disabledColor: #abb4bd;
+$grayLight: #dbdde0;
+$steelGray: #7a7a7a;
+
+$black: #000000;
+// Text
+$bodyText: #232323;
+$grayText: #606e7b; //disable color
+$grayBorder: #eceef0; // border common for button, input,...
+$mainBlackText: #232323;
+// Title texts, captions, input fields and everywhere else where black is required
+// Others
+$white: #ffffff;
+$whiteLight: #fafafa;
+$extraWhiteLight: #e4e4e4;
+$secondary: #ff8686;
+// secondary background button
+$itemHover: rgba(0, 128, 255, 0.04);
+$darkGray: #595959;
+$grayText1: #f4f4f6; // border card, tab, ...
+// border iconButton
+$borderButton: #e9e9e9;
+//Scrollbar
+$scrollbarThumbCl: #ebebeb;
+$boxShadow: 0px 0px 8px rgba(37, 40, 43, 0.12);
+//other
+$pattens-blue: #dce0e4;
+$gainsboro: #dadada;
+$green: #4caf4f;
+$nanamaGray: #7b7b7b;
+$devilGrass: #4caf50;
+$raidenBlue: #0052a3;
+$sliver: #bfbfbf;
+
+/*table*/
+$backgroundHeader: #fcfcfc;
+$borderPrimaryColor: #43a4ff;
+$textCell: $grayText;
+$textHeader: $mainBlackText;
+$borderTable: $grayText1;
+/*table*/
+
+//Card
+$backgroundCard: #f4f4f7;
+
+//Dashboard
+$dashBoard: (
+  "kyc": #0080ff,
+  "kycLowRisk": #c8e4ff,
+  "kycMediumRisk": #90c8ff,
+  "kycHighRisk": #0080ff,
+  "kycScore": #016bcf,
+  "kycStatistics": "#2979ff",
+  "kyb": #e89806,
+  "kybLowRisk": #f8ddbd,
+  "kybMediumRisk": #f4b975,
+  "kybHighRisk": #e89806,
+  "kybScore": #be7b02,
+  "kybStatistics": "#fb8200",
+  "kyt": #7b17f5,
+  "kytLowRisk": #C8A8ED,
+  "kytMediumRisk": #B963F0,
+  "kytHighRisk": #7B17F5,
+  "kytScore": #5700c1,
+  "kytStatistics": #8701ff,
+  "completed": #21a453,
+  "unresolved": #d44333,
+  "pending": #febe2d,
+);
+
+// Sidebar
+$sidebar_bg: #161618;
+$sidebar_bg_active: #3b3e40;
+
+/* Theme Color */
+$theme_colors: (
+  "primary": $primary,
+  "primaryLight": $primaryLight,
+  "primaryDark": $primaryDark,
+  "error": $error,
+  "errorLight": $errorLight,
+  "errorDark": $errorDark,
+  "default": $errorDark,
+  "defaultLight": $defaultLight,
+  "defaultDark": $defaultDark,
+  "warning": $warning,
+  "warningLight": $warningLight,
+  "warningDark": $warningDark,
+  "success": $success,
+  "successLight": $successLight,
+  "successDark": $successDark,
+  "secondary": $secondary,
+);
+
+//Status
+$positive: #f0faf3;
+$unresolved: #eceef0;
+$cardPositive: #5cc873;
+$cardFalse: #f21840;
+$cardUnresolved: #ffd964;

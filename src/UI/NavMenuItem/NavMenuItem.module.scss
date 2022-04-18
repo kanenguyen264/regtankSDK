@@ -1,0 +1,12 @@
+@import "../../styles/global/_global-dir";
+.NavMenuLink {
+  font-size: rem(14px);
+  padding: rem(12px) rem(30px) rem(12px) rem(20px);
+  letter-spacing: 0.02857em;
+  line-height: 1.5;
+  display: block;
+  text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

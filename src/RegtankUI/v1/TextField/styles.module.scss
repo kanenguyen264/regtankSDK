@@ -1,0 +1,232 @@
+@import "../styles/global.scss";
+$focusColor: $primary;
+
+.TextField {
+  label {
+    font-weight: 500;
+    font-size: toRem(12);
+    line-height: toRem(16);
+    color: $default;
+    transform: translate(0, 1.5px) scale(1);
+    letter-spacing: toRem(0.2);
+  }
+  :global(.MuiInput-underline) {
+    &:before {
+      border-bottom: 1px solid #dbdde0;
+    }
+    &:after {
+      border-bottom: 2px solid $primary;
+    }
+    &:global(.Mui-error):after {
+      border-color: $errorBorder;
+    }
+    &:hover {
+      &:before {
+        border-bottom: 1px solid #95a1ac;
+      }
+    }
+  }
+
+  :global(.MuiInputBase-input) {
+    &:disabled {
+      color: $disabledColor;
+      background-color: $white;
+    }
+    padding: toRem(8) 0 toRem(6);
+    font-size: toRem(14);
+    color: $bodyText;
+    &::placeholder {
+      font-weight: 400;
+      font-size: toRem(14);
+      line-height: toRem(20);
+      color: $defaultLight;
+      letter-spacing: toRem(0.1);
+      opacity: 1;
+    }
+  }
+  :global(.Mui-focused.MuiInputLabel-root) {
+    color: $primary !important;
+  }
+
+  :global(.Mui-error),
+  .errorMsg {
+    color: $errorBorder;
+  }
+
+  :global(.MuiFormHelperText-root) {
+    font-weight: 500;
+    font-size: toRem(12);
+    line-height: toRem(16);
+    margin-top: toRem(8);
+    color: $errorBorder;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  :global(.MuiOutlinedInput-root) {
+    padding: toRem(0) toRem(16) toRem(6);
+    font-size: toRem(14);
+    color: $bodyText;
+    margin-top: toRem(16);
+    &::placeholder {
+      font-weight: 400;
+      font-size: toRem(14);
+      line-height: toRem(20);
+      color: $disabledColor;
+    }
+
+    &:hover {
+      :global(.MuiOutlinedInput-notchedOutline) {
+        border-color: $default;
+      }
+    }
+
+    &:global(.Mui-focused) {
+      :global(.MuiOutlinedInput-notchedOutline) {
+        border-color: $primary !important;
+      }
+    }
+    legend {
+      display: none;
+    }
+    fieldset {
+      border: toRem(1) solid $grayBorder;
+      top: 0;
+    }
+  }
+
+  :global(.MuiOutlinedInput-root.Mui-disabled) {
+    fieldset {
+      background-color: $disabledBg;
+      z-index: 0;
+      border: 1px solid $grayBorder;
+    }
+    input {
+      -webkit-text-fill-color: unset;
+      background-color: $disabledBg;
+      color: $disabledColor;
+      z-index: 1;
+    }
+  }
+
+  :global(.MuiInputBase-multiline) {
+    margin-top: toRem(27);
+    > fieldset > legend {
+      display: none;
+    }
+  }
+
+  &:hover {
+    :global(.MuiInput-underline:before) {
+      border-color: $default !important;
+    }
+  }
+
+  :global(.Mui-error) {
+    :global(.MuiInputBase-input) {
+      &::placeholder {
+        opacity: 1;
+        color: $mainBlackText;
+      }
+    }
+  }
+}
+
+.textFieldOutlined {
+  display: block;
+  position: relative;
+  top: 0;
+  width: 100%;
+
+  > :global(.MuiFormLabel-root) {
+    display: block;
+  }
+
+  :global(.MuiSvgIcon-root) {
+    top: 50%;
+    transform: translatey(-50%);
+    path {
+      fill: $defaultLight;
+    }
+  }
+
+  :global(.MuiInputBase-multiline) {
+    padding: 0;
+  }
+
+  :global(.MuiOutlinedInput-root) {
+    &:global(.Mui-focused) {
+      :global(.MuiOutlinedInput-notchedOutline) {
+        border-color: $focusColor !important;
+      }
+
+      :global(.MuiSvgIcon-root) path {
+        fill: $focusColor;
+      }
+    }
+    &:hover {
+      :global(.MuiOutlinedInput-notchedOutline) {
+        border-color: $default;
+      }
+    }
+    :global(.MuiOutlinedInput-notchedOutline) {
+      border-color: $grayBorder;
+      top: 0;
+    }
+  }
+
+  :global(.MuiOutlinedInput-notchedOutline) {
+    top: 0;
+    legend {
+      display: none;
+    }
+  }
+
+  :global(.MuiFormLabel-root) {
+    font-weight: 500;
+    font-size: toRem(12);
+    line-height: toRem(16);
+    color: $default;
+    margin-bottom: 6px;
+  }
+
+  :global(.MuiOutlinedInput-input) {
+    box-sizing: content-box;
+    padding: toRem(14) toRem(16);
+    font-size: toRem(14);
+    color: $bodyText;
+    line-height: toRem(20);
+    &::placeholder {
+      color: $defaultLight;
+      font-size: toRem(14);
+      opacity: 1;
+    }
+  }
+  :global(.MuiFormHelperText-root) {
+    margin-left: 0;
+    position: absolute;
+    margin-top: 6px !important;
+    top: calc(100%);
+    left: 0;
+    width: 100%;
+    margin-left: 0 !important;
+  }
+
+  .required {
+    color: $error;
+  }
+  :global(.Mui-disabled) {
+    background-color: $disabledBg;
+    :global(.MuiOutlinedInput-notchedOutline) {
+      border-color: $grayBorder !important;
+    }
+  }
+}
+.labelNoProp {
+  :global(.MuiOutlinedInput-root) {
+    margin-top: 0;
+  }
+
+  :global(.MuiInput-root) {
+    margin-top: 0;
+  }
+}

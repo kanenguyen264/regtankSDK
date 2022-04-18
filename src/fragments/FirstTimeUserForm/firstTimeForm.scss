@@ -1,0 +1,10 @@
+@import "~@protego/sdk/RegtankUI/v1/styles/global.scss";
+.app-login-main-content {
+    padding: toRem(80) toRem(80);
+    position: relative;
+    width: toRem(640);
+    left: calc(50% - #{toRem(640/2)});
+    form {
+      width: 100%;
+    }
+}

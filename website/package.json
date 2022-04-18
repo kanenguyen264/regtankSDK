@@ -1,0 +1,60 @@
+{
+  "name": "website",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "docusaurus": "docusaurus",
+    "start": "docusaurus --port=3002 --host 0.0.0.0 start",
+    "build": "docusaurus build",
+    "swizzle": "docusaurus swizzle",
+    "deploy": "docusaurus deploy",
+    "serve": "docusaurus serve",
+    "ci": "yarn lint && yarn prettier:diff",
+    "lint": "eslint --cache \"**/*.js\" && stylelint \"**/*.css\"",
+    "prettier": "prettier --config .prettierrc --write \"**/*.{js,md}\"",
+    "prettier:diff": "prettier --config .prettierrc --list-different \"**/*.{js,md}\""
+  },
+  "dependencies": {
+    "@babel/preset-flow": "^7.12.1",
+    "@docusaurus/core": "2.0.0-alpha.66",
+    "@docusaurus/preset-classic": "2.0.0-alpha.66",
+    "@mdx-js/react": "^1.5.8",
+    "babel-plugin-react-docgen": "4.1.0",
+    "clsx": "^1.1.1",
+    "docusaurus-plugin-sass": "^0.1.11",
+    "file-loader": "^4.2.0",
+    "markdown-to-jsx": "^7.0.1",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4",
+    "react-github-login": "^1.0.3"
+  },
+  "devDependencies": {
+    "@svgr/webpack": "^5.4.0",
+    "babel-eslint": "^10.0.3",
+    "babel-plugin-named-asset-import": "^0.3.7",
+    "eslint": "^6.7.1",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-plugin-header": "^3.0.0",
+    "eslint-plugin-import": "^2.21.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.20.0",
+    "eslint-plugin-react-hooks": "^4.0.4",
+    "neo-async": "^2.6.2",
+    "prettier": "^2.0.2",
+    "stylelint": "^13.2.1"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

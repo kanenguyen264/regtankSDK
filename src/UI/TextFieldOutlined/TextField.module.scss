@@ -1,0 +1,61 @@
+@import "../../styles/global/_global-dir";
+
+.HelperText {
+  top: calc(100%);
+  left: 0;
+  width: 100%;
+  margin-left: 0 !important;
+  margin-top: 0 !important;
+}
+
+.textField {
+  box-sizing: border-box;
+
+  :global(.MuiOutlinedInput-root) {
+    height: rem(52px);
+  }
+
+  :global(.MuiOutlinedInput-root.Mui-focused fieldset) {
+    border-color: #0080ff !important;
+  }
+
+  :global(.MuiInputLabel-outlined) {
+    transform: translate(rem(24px), rem(20px));
+    color: #2b2b2bb2 !important;
+  }
+
+  :global(.MuiOutlinedInput-notchedOutline) {
+    padding: 0 rem(24px);
+  }
+
+  :global(.MuiInputLabel-outlined.Mui-focused),
+  :global(.MuiInputLabel-outlined.MuiFormLabel-filled) {
+    font-size: rem(14px);
+    transform: translate(rem(30.5px), rem(-6px));
+  }
+
+  :global(.MuiInputLabel-outlined.Mui-focused) {
+    color: #0080ff !important;
+  }
+
+  :global(.MuiAutocomplete-endAdornment) {
+    right: rem(23px) !important;
+  }
+
+  :global(.MuiAutocomplete-popupIndicator):hover {
+    background-color: transparent;
+  }
+
+  legend {
+    font-size: rem(14px) !important;
+
+    span {
+      padding-left: 3px;
+      padding-right: 3px;
+    }
+  }
+
+  :global(.MuiOutlinedInput-input) {
+    padding: rem(16px) rem(24px) !important;
+  }
+}

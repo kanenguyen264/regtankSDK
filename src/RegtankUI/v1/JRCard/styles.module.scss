@@ -1,0 +1,31 @@
+@import "../styles/global.scss";
+
+.JRCardRoot {
+  border: 1px solid $grayText1;
+  box-sizing: border-box;
+  border-radius: 8px;
+  background-color: $white;
+  overflow: hidden;
+  &.JRCardNoShadow {
+    box-shadow: none;
+  }
+
+  .HeaderLine,
+  .FooterLine {
+    margin: 0;
+    background: $grayText1;
+    border-top: toRem(1) solid $grayText1;
+  }
+
+  .JRCardHeader {
+    padding: toRem(24);
+    font-weight: 600;
+    font-size: toRem(18);
+    line-height: toRem(24);
+    color: $jr-card-title-form;
+  }
+
+  .JRCardBody {
+    padding: toRem(24);
+  }
+}

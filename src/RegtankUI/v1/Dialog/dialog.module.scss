@@ -1,0 +1,13 @@
+@import "../styles/global.scss";
+
+.dialogRootWrapper {
+  :global(.MuiDialog-paper) {
+    overflow: hidden;
+  }
+
+  :global(.Reg-MuiCloseableDialogTitle-title .MuiSvgIcon-root) {
+    path {
+      fill: $bodyText;
+    }
+  }
+}
